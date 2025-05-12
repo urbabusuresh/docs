@@ -1,102 +1,125 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "wso2apisuite Documentation",
+  "description": "Find user guides, quickstarts, tutorials, use cases, code samples, and more.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#f5314b",
+    "light": "#f53845",
+    "dark": "#fc6274"
+  },
+  "logo": {
+    "light": "/logo/dark.jpg",
+    "dark": "/logo/dark.jpg"
   },
   "favicon": "/favicon.svg",
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
   "navigation": {
-    "tabs": [
+    "anchors": [
       {
-        "tab": "Guides",
+        "anchor": "Documentation",
+        "icon": "lines-leaning",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Getting started",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "documentation/getting-started/introduction",
+              "documentation/getting-started/quick-start",
+              "documentation/getting-started/clients",
+              {
+                "group": "RESTful API",
+                "pages": [
+                  "documentation/getting-started/rest/creating-a-request",
+                  "documentation/getting-started/rest/response-handling",
+                  "documentation/getting-started/rest/request-parameters",
+                  "documentation/getting-started/rest/request-headers",
+                  "documentation/getting-started/rest/organizing-requests",
+                  "documentation/getting-started/rest/environment-variables",
+                  "documentation/getting-started/rest/auth-tokens",
+                  "documentation/getting-started/rest/uploading-data",
+                  "documentation/getting-started/rest/pre-request-scripts",
+                  "documentation/getting-started/rest/tests",
+                   "documentation/getting-started/rest/scheduler-jobs",
+                    "documentation/getting-started/rest/allure-reports"
+                ]
+              }
+            
             ]
           },
           {
-            "group": "Essentials",
+            "group": "CLI",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+               "documentation/clients/cli/overview",
+                  "documentation/clients/cli/troubleshooting"
+              
+            ]
+          },
+          {
+            "group": "Protocols",
+            "pages": [
+              "documentation/protocols/rest"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "documentation/features/workspaces",
+              "documentation/features/collections",
+              "documentation/features/runner",
+              "documentation/features/variables",
+              "documentation/features/environments",
+              "documentation/features/pat",
+              "documentation/features/history",
+              "documentation/features/spotlight",
+              "documentation/features/shortcuts",
+              "documentation/features/scripts",
+              "documentation/features/importer",
+              "documentation/features/customization",
+              "documentation/features/inspections",
+              "documentation/features/client-certificate",
+              "documentation/features/snippets",
+              "documentation/features/context-menu",
+              "documentation/features/widgets",
+              "documentation/features/authorization",
+              "documentation/features/rest-api-testing",
+              "documentation/features/scheduler-jobs",
+              "documentation/features/allure-reports"
             ]
           }
         ]
       },
       {
-        "tab": "API Reference",
+        "anchor": "Support",
+        "icon": "question",
         "groups": [
+         
           {
-            "group": "API Documentation",
+            "group": "Resources",
             "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "support/security-policy",
+              "support/privacy",
+              "support/terms"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+      
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "linkedin": "https://in.linkedin.com/company/knot-solutions-pvt-ltd"
     }
-  }
+  },
+  "search": {
+    "prompt": "Search"
+  },
+  "redirects": [
+    {
+      "source": "/source/path",
+      "destination": "/destination/path"
+    }
+  ]
 }
