@@ -1,7 +1,7 @@
 ---
-sidebarTitle: Request headers
-title: Request headers
-description: Request Headers allow you to pass additional information with requests, helping to control how the server responds.
+sidebarTitle: "Request headers"
+title: "Request headers"
+description: "Request Headers allow you to pass additional information with requests, helping to control how the server responds."
 ---
 
 Request Headers are key-value pairs that the client sends to the server with an HTTP request. These headers carry extra details about your request, helping the server understand its context and tailor the response to fit.
@@ -20,7 +20,9 @@ Here are a few common headers you might set:
 | **Cache-Control** | Controls caching behavior in both requests and responses.                                 |
 | **User-Agent**    | Provides information about the client making the request.                                 |
 
-<Note> When the **Authorization and Content-Type** values are set through their respective sections, the description fields in their auto-generated headers are disabled for manual input, leaving the value empty. In contrast, for **Inherited** headers, the specified values are automatically populated in the description fields. </Note>
+<Note>
+   When the **Authorization and Content-Type** values are set through their respective sections, the description fields in their auto-generated headers are disabled for manual input, leaving the value empty. In contrast, for **Inherited** headers, the specified values are automatically populated in the description fields. 
+</Note>
 
 wso2apisuite offers a variety of header options beyond these five examples, allowing you to customize how the server processes your requests to meet specific requirements.
 
@@ -33,4 +35,3 @@ Authorization: Bearer token123
 Content-Type: application/json
 # User-Agent: CustomAgent/1.0
 ```
-
