@@ -1,25 +1,82 @@
 ---
 sidebarTitle: Security policy
-title: Security policy
-description: Security procedures and general policies for RaptrOnix.
+title: Security Policy
+description: Security practices and principles followed in RaptrOnix.
 ---
 
-This document outlines security procedures and general policies for the RaptrOnix project.
+This Security Policy outlines the technical and organizational measures implemented to ensure the integrity, confidentiality, and availability of data processed within **RaptrOnix**, the internal API testing tool used exclusively within our organization's VPN.
 
-- [Security Policy](#security-policy)
-  - [Reporting a security vulnerability](#reporting-a-security-vulnerability)
-  - [Incident response process](#incident-response-process)
+RaptrOnix is not accessible from the public internet and operates entirely within secure, enterprise-controlled infrastructure.
 
-## Reporting a security vulnerability
+# **1. Access Control**
 
-Report security vulnerabilities by emailing the RaptrOnix team.
+- Access to RaptrOnix is restricted to authorized employees only.
+- All access requires authentication via:
+  - Microsoft Azure Active Directory (SSO)
+  - Google Workspace OAuth
+  - Verified corporate email domains
+- Multi-factor authentication (MFA) is enforced where applicable.
+- Session timeouts and idle logout mechanisms are in place to prevent misuse.
 
-The primary security point of contact from RaptrOnix team will acknowledge your email within 48 hours, and will send a more detailed response within 48 hours indicating the next steps in handling your report. After the initial reply to your report, the security team will endeavor to keep you informed of the progress towards a fix and full announcement, and may ask for additional information or guidance.
+# **2. Network and Infrastructure Security**
 
-## Incident response process
+- RaptrOnix is deployed within a **secure VPN environment**.
+- All communication is encrypted using **TLS 1.2+ (HTTPS)**.
+- Internal firewalls restrict access to whitelisted IP ranges.
+- Data is stored on servers compliant with organizational security baselines.
+- Backups are encrypted and rotated according to IT policy.
 
-In case an incident is discovered or reported, we will follow the following  process to contain, respond, and remediate:
+# **3. Application Security**
 
-1. Confirm the problem and determine the affected versions.
-2. Audit code to find any potential similar problems.
-3. Prepare fixes for all releases still under maintenance. These fixes will be deployed as fast as possible to production.
+- Secure coding practices are followed, including input sanitization and output encoding.
+- Role-based access control (RBAC) is implemented for different features/modules.
+- Regular vulnerability scans and penetration testing are performed.
+- Dependency libraries are reviewed and patched regularly via automated tooling.
+
+# **4. Data Security and Retention**
+
+- All sensitive data is encrypted in transit and at rest.
+- Logs and API test payloads are stored for diagnostic purposes with time-bound retention (up to 90 days).
+- No personal or confidential customer data should be entered into the tool.
+- Retention schedules are enforced automatically, and expired data is purged.
+
+# **5. Monitoring and Auditing**
+
+- User actions are logged for traceability and compliance.
+- Security event logs are monitored via internal SIEM systems.
+- Alerts are triggered for abnormal login attempts, failed authentications, and unusual usage patterns.
+
+# **6. Incident Response**
+
+- A formal incident response plan is in place.
+- Any suspected data breach or system compromise must be reported to the **IT Security Team** immediately.
+- Incidents are tracked, investigated, and documented with root cause analysis and corrective action.
+
+# **7. Employee Access and Training**
+
+- Only designated development and DevOps teams have administrative access.
+- Developers and system operators receive periodic security training.
+- Least privilege principles are applied to all user roles.
+
+# **8. Third-Party Integrations**
+
+- RaptrOnix only integrates with third-party tools approved by internal , such as:
+  - Microsoft Authentication (Azure AD)
+- All data shared with third-party services complies with internal privacy and data protection policies.
+
+# **9. Business Continuity**
+
+- Redundant systems and automated backups support high availability.
+- Disaster recovery processes are tested periodically.
+- Maintenance and patching schedules are managed via DevSecOps pipelines.
+
+# **10. Reporting Security Issues**
+
+If you believe you have discovered a vulnerability or security issue in RaptrOnix, please contact the internal security team 
+
+We encourage responsible disclosure and will investigate all reported concerns promptly.
+
+---
+
+_Last updated: June 20, 2025_
+
