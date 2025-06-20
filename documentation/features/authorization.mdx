@@ -6,7 +6,7 @@ description: Authorization is the process of verifying that a client has permiss
 
 REST APIs use authorization to ensure that a client has secure access only to the resources permitted by their roles. If you are building or integrating with a 3rd party API, you can choose between Basic Auth, Bearer Tokens, and OAuth2.0.
 
-Auth details can be added to a header, body, or as parameters to a request. However, if you enter your auth details in the Authorization Tab, wso2apisuite will automatically modify the relevant parts of the request based on your chosen `Auth` type. Storing Auth Credentials or Bearer Tokens as environment variables, lets you re-use these more safely and efficiently.
+Auth details can be added to a header, body, or as parameters to a request. However, if you enter your auth details in the Authorization Tab, RaptrOnix will automatically modify the relevant parts of the request based on your chosen `Auth` type. Storing Auth Credentials or Bearer Tokens as environment variables, lets you re-use these more safely and efficiently.
 
 ## Inherit
 
@@ -14,7 +14,7 @@ Inherit Authorization allows requests to automatically adopt the authorization s
 
 ## Basic Auth
 
-Basic Authentication is one of the simplest methods to secure your API requests in wso2apisuite. It works by requiring a username and password to be sent along with each request. To get started, head to the **Authorization** tab and select `Basic Auth` as your authentication type. You'll then input your verified **username** and **password**. When you send the request, wso2apisuite will automatically encode your credentials in the format: 
+Basic Authentication is one of the simplest methods to secure your API requests in RaptrOnix. It works by requiring a username and password to be sent along with each request. To get started, head to the **Authorization** tab and select `Basic Auth` as your authentication type. You'll then input your verified **username** and **password**. When you send the request, RaptrOnix will automatically encode your credentials in the format: 
 
 ```
 Basic <Base64-encoded-credentials>
@@ -24,16 +24,16 @@ Basic <Base64-encoded-credentials>
 
 ## Bearer Tokens
 
-Bearer Tokens are used to authenticate requests using an access token, which can be a simple string or a JWT (JSON Web Token). To set it up, choose `Bearer` from the **Authorization** tab and enter your **access token**. wso2apisuite will include the token in the request header as:
+Bearer Tokens are used to authenticate requests using an access token, which can be a simple string or a JWT (JSON Web Token). To set it up, choose `Bearer` from the **Authorization** tab and enter your **access token**. RaptrOnix will include the token in the request header as:
 
 ```
 Bearer <your-access-token>
 ```
 
-<Info>Be aware that if your token expires, you'll need to refresh it manually and update it in wso2apisuite. For better security, consider storing your token as an environment variable so that you can easily reference it in your requests.</Info>
+<Info>Be aware that if your token expires, you'll need to refresh it manually and update it in RaptrOnix. For better security, consider storing your token as an environment variable so that you can easily reference it in your requests.</Info>
 
 ## API Key
-API Keys are unique identifiers that help authenticate your requests to an API. In wso2apisuite, you can set up `API Key` authentication by selecting it from the **Authorization** tab. Here, you'll need to fill in two fields: the **Key**, which is the name the API expects (like `api_key` or `Authorization`), and the **Value**, which is your actual API Key. You can also choose whether to pass this API Key as a **Header** or as a **Query Parameter**.
+API Keys are unique identifiers that help authenticate your requests to an API. In RaptrOnix, you can set up `API Key` authentication by selecting it from the **Authorization** tab. Here, you'll need to fill in two fields: the **Key**, which is the name the API expects (like `api_key` or `Authorization`), and the **Value**, which is your actual API Key. You can also choose whether to pass this API Key as a **Header** or as a **Query Parameter**.
 
 <Tip>When using API Keys, keep an eye on the rate limits set by the API provider to avoid any issues. For improved security practices, store your API Key as an environment variable to facilitate easy management across different environments.</Tip>
 
@@ -41,7 +41,7 @@ API Keys are unique identifiers that help authenticate your requests to an API. 
 
 OAuth 2.0 provides a secure way to let third-party applications access your resources without needing to share your passwords. Instead of directly passing credentials, you authenticate through a trusted service, which then issues an access token. This **token** allows your app to make API requests on your behalf.
 
-<Warning> OAuth 2.0 workflows are not fully supported in the wso2apisuite Desktop application and are currently a work in progress. We're actively working on it, and it will function as intended soon!</Warning>
+<Warning> OAuth 2.0 workflows are not fully supported in the RaptrOnix Desktop application and are currently a work in progress. We're actively working on it, and it will function as intended soon!</Warning>
 
 ### Steps for OAuth 2.0 Setup
 
@@ -52,16 +52,16 @@ OAuth 2.0 provides a secure way to let third-party applications access your reso
 
 ### Grant types
 
-When using OAuth 2.0 authorization with wso2apisuite, you can utilize the following grant types:
+When using OAuth 2.0 authorization with RaptrOnix, you can utilize the following grant types:
 
 
 #### 1. Authorization Code
 
 The Authorization Code grant is used when your application needs to access a user's account. The user logs in to the OAuth provider and gives permission, allowing your app to receive a special code. You then use this code to request an access token that lets you access the user's data.
 
-To use the `Authorization Code` grant type, ensure the [Callback URL](#oauth-callback-url-configuration) is correctly configured (either `http://172.16.111.83:3333/oauth` for wso2apisuite Cloud or `<your-domain>/oauth` for self-hosted editions). Next, provide the **Authorization Endpoint** and **Access Token Endpoint** from the API provider, along with the **Client ID** (and the Client Secret if you choose to use it). You can also specify the desired permissions in the **Scope** field and pass the token as a **Header** or as a **Query Parameter**. Once you've filled in these fields, click Generate Token to get your access token.
+To use the `Authorization Code` grant type, ensure the [Callback URL](#oauth-callback-url-configuration) is correctly configured (either `http://172.16.111.83:3333/oauth` for RaptrOnix Cloud or `<your-domain>/oauth` for self-hosted editions). Next, provide the **Authorization Endpoint** and **Access Token Endpoint** from the API provider, along with the **Client ID** (and the Client Secret if you choose to use it). You can also specify the desired permissions in the **Scope** field and pass the token as a **Header** or as a **Query Parameter**. Once you've filled in these fields, click Generate Token to get your access token.
 
-<Tip> If your API provider supports token refreshing, you can use the **"Refresh Token"** button in wso2apisuite to obtain a new access token without requiring the user to log in again.</Tip>
+<Tip> If your API provider supports token refreshing, you can use the **"Refresh Token"** button in RaptrOnix to obtain a new access token without requiring the user to log in again.</Tip>
 
 > #### Using PKCE
 > 
@@ -74,7 +74,7 @@ The Client Credentials grant is suitable for server-to-server interactions, wher
 To obtain a token using `Client Credentials` grant type, input the **Authorization Endpoint** from the API provider, and fill in your **Client ID**. Including a Client Secret is optional.
 
 <Note> 
-You can now choose how the **client credentials** (Client ID and Client Secret) are sent to the server. wso2apisuite supports both:
+You can now choose how the **client credentials** (Client ID and Client Secret) are sent to the server. RaptrOnix supports both:
 - Sending them in the **body of the request** (default behavior).
 - Sending them via **Basic Authentication headers**.
 
@@ -85,16 +85,16 @@ Just select your preferred method in the `Client Authentication` field to suit y
 
 The Password Credentials grant allows you to authenticate users by sending their username and password directly to the API. This method is less secure and is generally discouraged for third-party applications.
 
-To implement the `Password` credentials grant type in wso2apisuite, provide your API provider's **Authorization Endpoint**, along with the **Username** and **Password**. Occasionally, you may also be required to supply a Client ID and Secret.
+To implement the `Password` credentials grant type in RaptrOnix, provide your API provider's **Authorization Endpoint**, along with the **Username** and **Password**. Occasionally, you may also be required to supply a Client ID and Secret.
 
 #### 4. Implicit
 
 The Implicit grant is intended for client-side applications, where the access token is returned immediately without the need for an authorization code. While this method simplifies the process, it does come with security risks.
 
-To configure the `Implicit` grant type in wso2apisuite, make sure the [Callback URL](#oauth-callback-url-configuration) is set as required (either `http://172.16.111.83:3333/oauth` or `<your-domain>/oauth`).  You will need to further provide the **Authorization Endpoint** and **Client ID** to generate the token.
+To configure the `Implicit` grant type in RaptrOnix, make sure the [Callback URL](#oauth-callback-url-configuration) is set as required (either `http://172.16.111.83:3333/oauth` or `<your-domain>/oauth`).  You will need to further provide the **Authorization Endpoint** and **Client ID** to generate the token.
 
 ### <Icon icon="check" iconType="solid" /> OAuth Callback URL Configuration
-When using OAuth 2.0 with wso2apisuite Cloud, the **callback URL** is fixed to `http://172.16.111.83:3333/oauth` while for self-hosted editions of wso2apisuite, the callback URL should be set to `<your-domain>/oauth` . You must configure this URL as a valid **redirect URI** in your OAuth provider's settings. This is important because wso2apisuite handles all OAuth requests on the client side. When your OAuth provider redirects you to this URL, we process the response to obtain the token or authorization code. Any mismatch between the registered callback URL and what wso2apisuite uses will result in errors like `INVALID_REDIRECT_URI` during the authorization process.
+When using OAuth 2.0 with RaptrOnix Cloud, the **callback URL** is fixed to `http://172.16.111.83:3333/oauth` while for self-hosted editions of RaptrOnix, the callback URL should be set to `<your-domain>/oauth` . You must configure this URL as a valid **redirect URI** in your OAuth provider's settings. This is important because RaptrOnix handles all OAuth requests on the client side. When your OAuth provider redirects you to this URL, we process the response to obtain the token or authorization code. Any mismatch between the registered callback URL and what RaptrOnix uses will result in errors like `INVALID_REDIRECT_URI` during the authorization process.
 
 <Note> The Callback URL is required only for **Authorization Code** and **Implicit** grant types. Other grant types do not need this configuration. </Note>
 
@@ -102,15 +102,15 @@ When using OAuth 2.0 with wso2apisuite Cloud, the **callback URL** is fixed to `
 
 Digest Auth is a way to verify your identity without transmitting plain text passwords. Instead of sending your credentials directly as plain-text, it uses a challenge-response system to keep your information safe. When you attempt to access a restricted resource, the server responds with a `401 Unauthorized` status and a `WWW-Authenticate` header. This header contains essential information, including a unique challenge that you will use to generate a valid response.
 
-To configure Digest Auth in wso2apisuite, start by entering your **Username** and **Password**. For added security, you can also provide optional parameters like Realm and Nonce from the `WWW-Authenticate` header. Choose the appropriate **Algorithm** for hashing and define the **Quality of Protection (QoP)** to further secure your requests. You can also specify parameters such as **Nonce Count**, **Client Nonce**, and **Opaque** to further bolster the authentication process.
+To configure Digest Auth in RaptrOnix, start by entering your **Username** and **Password**. For added security, you can also provide optional parameters like Realm and Nonce from the `WWW-Authenticate` header. Choose the appropriate **Algorithm** for hashing and define the **Quality of Protection (QoP)** to further secure your requests. You can also specify parameters such as **Nonce Count**, **Client Nonce**, and **Opaque** to further bolster the authentication process.
 
-<Note> **Digest Auth** is supported exclusively when using the [wso2apisuite Agent interceptor](/documentation/features/interceptor#wso2apisuite-agent). </Note>
+<Note> **Digest Auth** is supported exclusively when using the [RaptrOnix Agent interceptor](/documentation/features/interceptor#RaptrOnix-agent). </Note>
 
 ## AWS Signature
 
 AWS Signature is a method used to authenticate API requests made to AWS services. When you send a request, this configuration ensures that your request is genuine and has not been tampered with. It does this by using a process called HMAC (Hash-based Message Authentication Code), which creates a unique signature based on your request details.
 
-To set up `AWS Signature` in wso2apisuite, enter your AWS **Access Key** and **Secret Key** to sign your requests. For advanced configuration, you can also provide details like the **AWS Region** where your service is hosted (like _us-east-1_), the **Service Name** of the specific AWS service you're accessing (such as _s3 or dynamodb_), and a **Service Token** if you're using temporary security credentials.
+To set up `AWS Signature` in RaptrOnix, enter your AWS **Access Key** and **Secret Key** to sign your requests. For advanced configuration, you can also provide details like the **AWS Region** where your service is hosted (like _us-east-1_), the **Service Name** of the specific AWS service you're accessing (such as _s3 or dynamodb_), and a **Service Token** if you're using temporary security credentials.
 
 ---
 

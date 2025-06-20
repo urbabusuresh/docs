@@ -1,18 +1,18 @@
 ---
 sidebarTitle: Pre-request scripts
 title: Pre-request scripts
-description: Learn how to use pre-request scripts in wso2apisuite.
+description: Learn how to use pre-request scripts in RaptrOnix.
 ---
 
 ## Scripts
 
-wso2apisuite lets you add dynamic behavior to REST API requests. This allows you to write test suites and build requests that can contain dynamic parameters. You can add [ECMAScript](https://tc39.es/ecma262) code that executes based on events in the flow:
+RaptrOnix lets you add dynamic behavior to REST API requests. This allows you to write test suites and build requests that can contain dynamic parameters. You can add [ECMAScript](https://tc39.es/ecma262) code that executes based on events in the flow:
 
 - Pre-request scripts are executed before a request is sent to the server.
 - You can add multiple pre-request scripts to a request.
 - You can add pre-request scripts to both requests saved and not saved in a collection.
 
-<Tip>wso2apisuite will then execute the scripts along with the requests in the specified order.</Tip>
+<Tip>RaptrOnix will then execute the scripts along with the requests in the specified order.</Tip>
 
 ## Pre-request script
 
@@ -27,7 +27,7 @@ You can use the pre-request script for a pre-processing task such as:
 
 ## Writing pre-request scripts
 
-wso2apisuite provides a special `pw` object containing various methods to create scripts and tests. The `pw` object is global and can be referenced by name to access methods.
+RaptrOnix provides a special `pw` object containing various methods to create scripts and tests. The `pw` object is global and can be referenced by name to access methods.
 
 For example, to set an environment variable, you can use the `pw.env.set()` method.
 
@@ -37,7 +37,7 @@ pw.env.set("variable", "value");
 
 ## Examples
 
-Let us look at some examples of how you can use wso2apisuite to write pre-request scripts.
+Let us look at some examples of how you can use RaptrOnix to write pre-request scripts.
 
 ### Setting environment variables
 

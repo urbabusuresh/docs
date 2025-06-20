@@ -1,0 +1,5 @@
+https://192.168.200.147 {
+    tls internal
+    reverse_proxy mintlify:5000
+}
+

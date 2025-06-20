@@ -4,11 +4,11 @@ title: Scripts
 description: Write pre-request scripts and build tests.
 ---
 
-wso2apisuite provides [ECMAScript](https://tc39.es/ecma262) APIs that can be used in writing pre-request scripts and building tests. You can enter your [ECMAScript](https://tc39.es/ecma262) code and run the necessary scripts.
+RaptrOnix provides [ECMAScript](https://tc39.es/ecma262) APIs that can be used in writing pre-request scripts and building tests. You can enter your [ECMAScript](https://tc39.es/ecma262) code and run the necessary scripts.
 
 ## The `pw` object
 
-The `pw` object provides access to request and response data and variables in your wso2apisuite instance.
+The `pw` object provides access to request and response data and variables in your RaptrOnix instance.
 
 The `pw` object houses the following methods:
 
@@ -32,7 +32,7 @@ pw.env.set("atob", atob("SG9wcHNjb3RjaA=="));
 
 Use the `btoa()` function to **encode a regular string into Base64** and set it as an environment variable.
 ```javascript
-pw.env.set("btoa", btoa("wso2apisuite"));
+pw.env.set("btoa", btoa("RaptrOnix"));
 ```
 
 ## `pw.env.unset("variable)`
@@ -183,8 +183,8 @@ Use `.toHaveLength(number)` to check that an object has a `.length` property and
 
 ```javascript
 // These expectations will pass
-pw.expect("wso2apisuite").toHaveLength(10);
-pw.expect("wso2apisuite").not.toHaveLength(9);
+pw.expect("RaptrOnix").toHaveLength(10);
+pw.expect("RaptrOnix").not.toHaveLength(9);
 
 pw.expect(["apple", "banana", "coconut"]).toHaveLength(3);
 pw.expect(["apple", "banana", "coconut"]).not.toHaveLength(4);
@@ -196,8 +196,8 @@ Use `.toInclude(value)` to check that a string/array has a value entry.
 
 ```javascript
 // These expectations will pass
-pw.expect("wso2apisuite").toInclude("wso2");
-pw.expect("wso2apisuite").not.toInclude("apisuite");
+pw.expect("RaptrOnix").toInclude("wso2");
+pw.expect("RaptrOnix").not.toInclude("RaptrOnix");
 
 pw.expect(["apple", "banana", "coconut"]).toInclude("banana");
 pw.expect(["apple", "banana", "coconut"]).not.toInclude("grape");

@@ -1,20 +1,33 @@
 ---
+<<<<<<< HEAD
+sidebarTitle: Overview
+title: RaptrOnix CLI
+description: Run tests, manage automated API monitoring, and more.
+=======
 sidebarTitle: "Overview"
-title: "wso2apisuite CLI"
+title: "RaptrOnix CLI"
 description: "Run tests, manage automated API monitoring, and more."
+>>>>>>> e7608a510ea0b81f545d5d0227aa5079105dc26b
 ---
 
-wso2apisuite gives you multiple ways to interact with and configure your APIs. With the command-line interface (CLI) you can interact with the wso2apisuite platform using a terminal, or through an automated system. This enables you to run API tests, manage automated API monitoring, and more.
+RaptrOnix gives you multiple ways to interact with and configure your APIs. With the command-line interface (CLI) you can interact with the RaptrOnix platform using a terminal, or through an automated system. This enables you to run API tests, manage automated API monitoring, and more.
 
-This section contains a complete list of all wso2apisuite CLI commands available, alongside their optional parameters for additional behavior. You can also find a complete list of configuration options to configure your APIs through wso2apisuite.
+This section contains a complete list of all RaptrOnix CLI commands available, alongside their optional parameters for additional behavior. You can also find a complete list of configuration options to configure your APIs through RaptrOnix.
 
+<<<<<<< HEAD
+<Info>RaptrOnix CLI is currently in dev stage. Report a bug by to send a mail: sureshbabu.cherukuri@knotsolutions.com.</Info>
+
+## Pre-requisites
+Before installing the RaptrOnix CLI, ensure your system meets the following requirements.
+=======
 <Info>
-  wso2apisuite CLI is currently in dev stage. Report a bug by to send a mail: [sureshbabu.cherukuri@knotsolutions.com](mailto:sureshbabu.cherukuri@knotsolutions.com).
+  RaptrOnix CLI is currently in dev stage. Report a bug by to send a mail: [sureshbabu.cherukuri@knotsolutions.com](mailto:sureshbabu.cherukuri@knotsolutions.com).
 </Info>
 
 ## Pre-requisites
 
-Before installing the wso2apisuite CLI, ensure your system meets the following requirements.
+Before installing the RaptrOnix CLI, ensure your system meets the following requirements.
+>>>>>>> e7608a510ea0b81f545d5d0227aa5079105dc26b
 
 <AccordionGroup>
   <Accordion title="Windows & macOS">
@@ -57,12 +70,12 @@ Before installing the wso2apisuite CLI, ensure your system meets the following r
   </Accordion>
 </AccordionGroup>
 
-## Installing wso2apisuite CLI
+## Installing RaptrOnix CLI
 
-Once the dependencies are installed, install @wso2apisuite/cli from npm by running:
+Once the dependencies are installed, install @RaptrOnix/cli from npm by running:
 
 ```bash
-npm i -g @wso2apisuite/cli
+npm i -g @RaptrOnix/cli
 ```
 
 <Warning>
@@ -73,23 +86,23 @@ npm i -g @wso2apisuite/cli
 
 ### `raptr test`
 
-The `raptr test` command allows you to run tests against a wso2apisuite collection file.
+The `raptr test` command allows you to run tests against a RaptrOnix collection file.
 
 - The raptr test command recursively goes through each request in the collection and runs them, validating the responses with the test script provided in each request. Hence, the order of execution is the same as the order specified in the collection structure.
 - If upon executing the command, a failed assertion (a failing test case) has occurred, the command will give a non-zero exit code and 0 exit code if all tests have passed.
 - Unless there was a network error (for example, DNS resolution errors or network Connectivity Issues), the test script will be running and it is up to the test script to define what happens to error status codes. Non-200 status codes are still considered valid responses for test script execution.
 
 ```bash
-raptr test [-e <environment file>] [-d <delay_in_ms> ] <wso2apisuite collection file>
+raptr test [-e <environment file>] [-d <delay_in_ms> ] <RaptrOnix collection file>
 ```
 
 ### Running Collections present on the API client
 
-The `raptr test` command can also be used to run collections present in your API client on wso2apisuite cloud or self-hosted platforms.
+The `raptr test` command can also be used to run collections present in your API client on RaptrOnix cloud or self-hosted platforms.
 Do note that you need to create a personal access token for your CLI to connect to your API client, and you can not run collections present in your personal workspace.
 
 ```bash
-raptr test  [-e <environment id>] [-d <delay_i_ms>] <wso2apisuite collection id> [--token <access_token>] [--server <server url>]
+raptr test  [-e <environment id>] [-d <delay_i_ms>] <RaptrOnix collection id> [--token <access_token>] [--server <server url>]
 ```
 
 <Tip>
@@ -124,10 +137,16 @@ The JUnit report generated for collection runs provides a structured summary of 
 
 ### Arguments
 
-- `wso2apisuite collection id` : Each collection created in a wso2apisuite workspace is given a unique identifier known as the Collection ID. Collection IDs for each collection can be found under **“Details”** tab inside Collection **“Properties”**.
-- `environment id` : Similar to Collection IDs, each environment created in a wso2apisuite workspace is assigned a unique identifier known as the Environment ID.
+<<<<<<< HEAD
+- `RaptrOnix collection id` : Each collection created in a RaptrOnix workspace is given a unique identifier known as the Collection ID. Collection IDs for each collection can be found under **“Details”** tab inside Collection **“Properties”**.
+    
+- `environment id` : Similar to Collection IDs, each environment created in a RaptrOnix workspace is assigned a unique identifier known as the Environment ID.
+=======
+- `RaptrOnix collection id` : Each collection created in a RaptrOnix workspace is given a unique identifier known as the Collection ID. Collection IDs for each collection can be found under **“Details”** tab inside Collection **“Properties”**.
+- `environment id` : Similar to Collection IDs, each environment created in a RaptrOnix workspace is assigned a unique identifier known as the Environment ID.
+>>>>>>> e7608a510ea0b81f545d5d0227aa5079105dc26b
 - `delay_i_ms` : Represents a time interval (in milliseconds) to pause execution of API requests before within a collection.
-- `access token` : It is a secure, unique identifier used to authenticate a user's access to their wso2apisuite account and its resources like collections, environments data. [Learn more about personal access tokens](/documentation/features/pat)
+- `access token` : It is a secure, unique identifier used to authenticate a user's access to their RaptrOnix account and its resources like collections, environments data. [Learn more about personal access tokens](/documentation/features/pat)
 - `server url` : This optional and is the URL of your self-hosted instance when you're self-hosting your API client
 - `path` : Accounts for a file path where the JUnit report will be saved as an XML file in your file system.
 - `no_of_iterations`: Indicates the number of iterations to run the collection. Each iteration will run the entire collection once, replacing any iteration-specific data defined by the `--iteration-data` flag (if provided).
@@ -137,7 +156,7 @@ The JUnit report generated for collection runs provides a structured summary of 
 - `allure-open` :If we want to open allure reports by default.
 
   ```bash
-  raptr test <wso2apisuite_collection_file_or_id> [--iteration-count <no_of_iterations>] [--iteration-data <file_path>]
+  raptr test <RaptrOnix_collection_file_or_id> [--iteration-count <no_of_iterations>] [--iteration-data <file_path>]
   ```
 - `file_path`: The path to the CSV file for iteration data. This file should follow the format:
 
@@ -154,26 +173,47 @@ The JUnit report generated for collection runs provides a structured summary of 
 ### Example
 
 ```bash
-raptr test kitchen-sink-wso2apisuite-collection.json
-raptr test -e environment.json kitchen-sink-wso2apisuite-collection.json
-raptr test -e environment.json -d 1000 kitchen-sink-wso2apisuite-collection.json
+raptr test kitchen-sink-RaptrOnix-collection.json
+raptr test -e environment.json kitchen-sink-RaptrOnix-collection.json
+raptr test -e environment.json -d 1000 kitchen-sink-RaptrOnix-collection.json
 raptr test clxsntdgh0000lcx9fnits2h8 --token <access token> 
 raptr test -e clxspay2r0006lcx99aqgjbay -d 1000 clxsntdgh0000lcx9fnits2h8 --token <access token> --server http://172.16.111.83:3170
-raptr test -e environment.json kitchen-sink-wso2apisuite-collection.json --reporter-junit kitchen-sink-junit.xml
-raptr test kitchen-sink-wso2apisuite-collection.json --iteration-count 3 --iteration-data /path/to/iteration-data.csv
+raptr test -e environment.json kitchen-sink-RaptrOnix-collection.json --reporter-junit kitchen-sink-junit.xml
+raptr test kitchen-sink-RaptrOnix-collection.json --iteration-count 3 --iteration-data /path/to/iteration-data.csv
 raptr test cmachfvjf00hjfpvwkufm2wud --token pat-55dd8452-0215-44f7-a01b-14d29b6259e9 --server http://172.16.111.83:3170 --batch-job "*/2 * * * *" --run-at "2025-05-07T12:00:00" --reporter-junit D:\raptr-main\api-suite\report\raptr-junit.xml
 raptr test cmachfvjf00hjfpvwkufm2wud --token pat-55dd8452-0215-44f7-a01b-14d29b6259e9 --server http://172.16.111.83:3170 --reporter-junit --allure --allure-open
 ```
 
 ## Environment
 
-wso2apisuite allows templates in several places. For example, you could specify your endpoint URL as `<<baseurl>>/post` and specify baseurl as [`https://echo.wso2apisuite.com`](https://echo.wso2apisuite.com) in an environment file.
+RaptrOnix allows templates in several places. For example, you could specify your endpoint URL as `<<baseurl>>/post` and specify baseurl as [`https://echo.RaptrOnix.com`](https://echo.RaptrOnix.com) in an environment file.
 
-wso2apisuite CLI supports environment files in two specific formats:
+RaptrOnix CLI supports environment files in two specific formats:
 
 ### 1. Single Environment Entry Export Format
 
-This format is generated by wso2apisuite App when you export any of your environment. It includes a named environment (name) with key-value pairs, allowing you to define various variables within a single file.
+<<<<<<< HEAD
+This format is generated by RaptrOnix App when you export any of your environment. It includes a named environment (name) with key-value pairs, allowing you to define various variables within a single file.
+  ```json
+  {
+    "name": "my_env",
+    "variables": [
+      {
+        "key": "base_url",
+        "value": "https://echo.RaptrOnix.com"
+      },
+      {
+        "key": "auth_token",
+        "value": "xxxxxxxxxxxx"
+      }
+    ]
+  }
+  ```
+### 2. Legacy Export Format
+
+RaptrOnix CLI continues to support the legacy format which was previously the only accepted format used by CLI.
+=======
+This format is generated by RaptrOnix App when you export any of your environment. It includes a named environment (name) with key-value pairs, allowing you to define various variables within a single file.
 
 ```json
 {
@@ -181,7 +221,7 @@ This format is generated by wso2apisuite App when you export any of your environ
   "variables": [
     {
       "key": "base_url",
-      "value": "https://echo.wso2apisuite.com"
+      "value": "https://echo.RaptrOnix.com"
     },
     {
       "key": "auth_token",
@@ -193,8 +233,9 @@ This format is generated by wso2apisuite App when you export any of your environ
 
 ### 2. Legacy Export Format
 
-wso2apisuite CLI continues to support the legacy format which was previously the only accepted format used by CLI.
+RaptrOnix CLI continues to support the legacy format which was previously the only accepted format used by CLI.
 
+>>>>>>> e7608a510ea0b81f545d5d0227aa5079105dc26b
 ```json
 {
   "key1": "value1",
@@ -205,11 +246,15 @@ wso2apisuite CLI continues to support the legacy format which was previously the
 
 ### 3. Environment ID
 
-To use an environment on your API client using its ID, click on the `Properties` action present in the **menu icon** next to each environment. Within the Details section, you'll find the **Environment ID**. Copy this ID and use it in the wso2apisuite CLI for execution.
+To use an environment on your API client using its ID, click on the `Properties` action present in the **menu icon** next to each environment. Within the Details section, you'll find the **Environment ID**. Copy this ID and use it in the RaptrOnix CLI for execution.
 
+<<<<<<< HEAD
+<Note>Please note that the RaptrOnix CLI exclusively supports the above three formats for importing environment variables. It **does not** offer compatibility with **Bulk Environment** exports or **any other export** format.</Note>
+=======
 <Note>
-  Please note that the wso2apisuite CLI exclusively supports the above three formats for importing environment variables. It **does not** offer compatibility with **Bulk Environment** exports or **any other export** format.
+  Please note that the RaptrOnix CLI exclusively supports the above three formats for importing environment variables. It **does not** offer compatibility with **Bulk Environment** exports or **any other export** format.
 </Note>
+>>>>>>> e7608a510ea0b81f545d5d0227aa5079105dc26b
 
 ## Secrets
 
@@ -220,13 +265,31 @@ If requests in a collection consists of secret variables we recommend either of 
 
 ## Options
 
+<<<<<<< HEAD
+| Option                      | Description                                                                                                       |
+| ----------------------------| ------------------------------------------------------------------------------------------------------------------|                    
+| `-h`                        | Gives a list of associated commands and their descriptions                                                        |
+| `-v`                        | Displays the current version of the CLI                                                                           |
+|`--env or -e`                | Accepts environments in all the formats present in [Environment section](/documentation/clients/cli#environment). |
+|`--delay` or `-d`            | Used to defer the execution of requests in a collection.                                                          |
+|`--token`                    | Expects a personal access token to be passed for establishing connection with your RaptrOnix account.            |
+|`--server`                   | URL of your self-hosted instance, if your collections are on a self-hosted instance.                              |
+|`--reporter-junit`           | Expects a file path to store the JUnit Report.                                                                    |    
+|`--iteration-count`          |	Defines the number of iterations to run the collection.                                                           |
+|`--iteration-data`	          | Accepts the path to a CSV file that contains iteration data.                                                      |             
+| `batch-job`                 |This is optional and indicates the scheduler configuration with cron expression as a recurring job.
+| `run-at`                    |This is optional and runs at once with feature date.
+| `allure`                    |This is optional and its generates allure reports but its not open automatically in browser.
+| `allure-open`               |If we want to open allure reports by default.
+
+=======
 | Option              | Description                                                                                                       |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | `-h`                | Gives a list of associated commands and their descriptions                                                        |
 | `-v`                | Displays the current version of the CLI                                                                           |
 | `--env or -e`       | Accepts environments in all the formats present in [Environment section](/documentation/clients/cli#environment). |
 | `--delay` or `-d`   | Used to defer the execution of requests in a collection.                                                          |
-| `--token`           | Expects a personal access token to be passed for establishing connection with your wso2apisuite account.          |
+| `--token`           | Expects a personal access token to be passed for establishing connection with your RaptrOnix account.          |
 | `--server`          | URL of your self-hosted instance, if your collections are on a self-hosted instance.                              |
 | `--reporter-junit`  | Expects a file path to store the JUnit Report.                                                                    |
 | `--iteration-count` | Defines the number of iterations to run the collection.                                                           |
@@ -235,6 +298,7 @@ If requests in a collection consists of secret variables we recommend either of 
 | `run-at`            | This is optional and runs at once with feature date.                                                              |
 | `allure`            | This is optional and its generates allure reports but its not open automatically in browser.                      |
 | `allure-open`       | If we want to open allure reports by default.                                                                     |
+>>>>>>> e7608a510ea0b81f545d5d0227aa5079105dc26b
 
 ## Test Report Components
 

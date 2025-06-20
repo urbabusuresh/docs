@@ -4,48 +4,48 @@ title: Interceptor
 description: Intercept and modify requests and responses.
 ---
 
-You can access APIs blocked by `Cross-Origin Resource Sharing (CORS)` restriction by using either wso2apisuite Agent, Proxyscotch or custom middleware. You can also use the wso2apisuite web extension to intercept requests and responses.
+You can access APIs blocked by `Cross-Origin Resource Sharing (CORS)` restriction by using either RaptrOnix Agent, Proxyscotch or custom middleware. You can also use the RaptrOnix web extension to intercept requests and responses.
 
 <Tabs>
-  <Tab title="wso2apisuite Agent">
-    ## wso2apisuite Agent
+  <Tab title="RaptrOnix Agent">
+    ## RaptrOnix Agent
 
-    The wso2apisuite Agent is a micro application designed to mitigate the challenges posed by `CORS` in modern web browsers. Acting as a local intermediary, it intercepts API requests made through the wso2apisuite web app and reroutes them through your local machine. This means that the wso2apisuite Agent handles requests using your local network configuration.
+    The RaptrOnix Agent is a micro application designed to mitigate the challenges posed by `CORS` in modern web browsers. Acting as a local intermediary, it intercepts API requests made through the RaptrOnix web app and reroutes them through your local machine. This means that the RaptrOnix Agent handles requests using your local network configuration.
 
-    1. Download the wso2apisuite Agent for your operating system:
+    1. Download the RaptrOnix Agent for your operating system:
     <AccordionGroup>
       <Accordion title="Mac" icon="apple">
-        <Card title="Apple Silicon (.dmg)" href="https://github.com/wso2apisuite/agent-releases/releases/latest/download/wso2apisuite_Agent_mac_aarch64.dmg">
+        <Card title="Apple Silicon (.dmg)" href="https://github.com/RaptrOnix/agent-releases/releases/latest/download/RaptrOnix_Agent_mac_aarch64.dmg">
           Download for Apple Silicon-based Mac.
         </Card>
-        <Card title="Intel (.dmg)" href="https://github.com/wso2apisuite/agent-releases/releases/latest/download/wso2apisuite_Agent_mac_x64.dmg">
+        <Card title="Intel (.dmg)" href="https://github.com/RaptrOnix/agent-releases/releases/latest/download/RaptrOnix_Agent_mac_x64.dmg">
           Download for Intel-based Mac.
         </Card>
       </Accordion>
       <Accordion title="Windows" icon="windows">
-        <Card title="Windows Installer (.msi)" href="https://github.com/wso2apisuite/agent-releases/releases/latest/download/wso2apisuite_Agent_win_x64.msi">
+        <Card title="Windows Installer (.msi)" href="https://github.com/RaptrOnix/agent-releases/releases/latest/download/RaptrOnix_Agent_win_x64.msi">
           Download the installer for Windows (64-bit).
         </Card>
-        <Card title="Windows Portable (.exe)" href="https://github.com/wso2apisuite/agent-releases/releases/latest/download/wso2apisuite_Agent_win_x64_portable.zip">
+        <Card title="Windows Portable (.exe)" href="https://github.com/RaptrOnix/agent-releases/releases/latest/download/RaptrOnix_Agent_win_x64_portable.zip">
           Download the portable version for Windows (64-bit).
         </Card>
       </Accordion>
       <Accordion title="Linux" icon="linux">
-        <Card title="Debian (.deb)" href="https://github.com/wso2apisuite/agent-releases/releases/latest/download/wso2apisuite_Agent_linux_x64.deb">
+        <Card title="Debian (.deb)" href="https://github.com/RaptrOnix/agent-releases/releases/latest/download/RaptrOnix_Agent_linux_x64.deb">
           Download the Debian package for Debian-based Linux distributions.
         </Card>
-        <Card title="App Image (.AppImage)" href="https://github.com/wso2apisuite/agent-releases/releases/latest/download/wso2apisuite_Agent_linux_x64.AppImage">
+        <Card title="App Image (.AppImage)" href="https://github.com/RaptrOnix/agent-releases/releases/latest/download/RaptrOnix_Agent_linux_x64.AppImage">
           Download the AppImage for Linux.
         </Card>
       </Accordion>
     </AccordionGroup>
 
-    2. Open [wso2apisuite](http://172.16.111.83:3333) app and navigate to the "**Interceptors**" section in the **"Settings"** page.
+    2. Open [RaptrOnix](http://172.16.111.83:3333) app and navigate to the "**Interceptors**" section in the **"Settings"** page.
     3. Locate the "**Agent**" option within the Interceptors section to initiate a connection to your local agent.
-    4. The application will prompt you for a "**One-Time Verification Code**". This verification code will be generated within the wso2apisuite Agent.
+    4. The application will prompt you for a "**One-Time Verification Code**". This verification code will be generated within the RaptrOnix Agent.
     5. Enter the verification code into the application to establish a secure connection.
 
-    Once connected, all API requests made through the wso2apisuite web app will be routed through wso2apisuite agent, effectively eliminating CORS-related issues.
+    Once connected, all API requests made through the RaptrOnix web app will be routed through RaptrOnix agent, effectively eliminating CORS-related issues.
 
     <Tip>Recommended interceptor for most users as it is compaitble with all platforms.</Tip>
   </Tab>
@@ -55,11 +55,11 @@ You can access APIs blocked by `Cross-Origin Resource Sharing (CORS)` restrictio
     A proxy server acts as an intermediary between your device and the internet, forwarding requests and responses to and from the desired API. By routing requests through a proxy, you can bypass CORS restrictions and access APIs that would otherwise be blocked by the browser.
 
     - Enable proxy interceptor from "[**Settings page**](http://172.16.111.83:3333/settings)" under the **Interceptors** section.
-    - You can replace the default Proxy URL with your own proxy middleware if you wish or use [Proxyscotch](https://github.com/wso2apisuite/proxyscotch), which acts as a remote proxy server for routing API requests.
+    - You can replace the default Proxy URL with your own proxy middleware if you wish or use [Proxyscotch](https://github.com/RaptrOnix/proxyscotch), which acts as a remote proxy server for routing API requests.
 
     ## Proxyscotch
 
-    [Proxyscotch](https://github.com/wso2apisuite/proxyscotch) is our official proxy server. It is an MIT licensed open-source project that can bypass Cross-Origin Resource Sharing (CORS) restrictions by routing API requests through a remotely hosted proxy, ensuring that requests originate from a trusted environment.
+    [Proxyscotch](https://github.com/RaptrOnix/proxyscotch) is our official proxy server. It is an MIT licensed open-source project that can bypass Cross-Origin Resource Sharing (CORS) restrictions by routing API requests through a remotely hosted proxy, ensuring that requests originate from a trusted environment.
 
     #### Self-Hosted Proxyscotch
 
@@ -68,10 +68,10 @@ You can access APIs blocked by `Cross-Origin Resource Sharing (CORS)` restrictio
 
     ```bash
     # Pull the latest Proxyscotch image from Docker Hub
-    docker pull wso2apisuite/proxyscotch
+    docker pull RaptrOnix/proxyscotch
 
     # Run the container in detached mode, exposing port 9159
-    docker run -d -p 9159:9159 --name proxyscotch wso2apisuite/proxyscotch
+    docker run -d -p 9159:9159 --name proxyscotch RaptrOnix/proxyscotch
     ```
 
     #### Proxyscotch Installer
@@ -80,42 +80,42 @@ You can access APIs blocked by `Cross-Origin Resource Sharing (CORS)` restrictio
 
     <AccordionGroup>
       <Accordion title="Mac" icon="apple">
-        <Card title="Tray application (macOS)" href="https://github.com/wso2apisuite/proxyscotch/releases/latest/download/Proxyscotch-Desktop-macOS-v0.1.1.zip">
+        <Card title="Tray application (macOS)" href="https://github.com/RaptrOnix/proxyscotch/releases/latest/download/Proxyscotch-Desktop-macOS-v0.1.1.zip">
           Download proxyscotch for macOS desktops. This will install the tray application for seamless proxy management.
         </Card>
-        <Card title="Proxy Server Binary (Intel-based macOS)" href="https://github.com/wso2apisuite/proxyscotch/releases/latest/download/proxyscotch-server-darwin-amd64-v0.1.1">
+        <Card title="Proxy Server Binary (Intel-based macOS)" href="https://github.com/RaptrOnix/proxyscotch/releases/latest/download/proxyscotch-server-darwin-amd64-v0.1.1">
           Download the proxy server binary for Intel-based (x86-64) Macs.
         </Card>
-        <Card title="Proxy Server Binary (Apple Silicon macOS)" href="https://github.com/wso2apisuite/proxyscotch/releases/latest/download/proxyscotch-server-darwin-arm64-v0.1.1">
+        <Card title="Proxy Server Binary (Apple Silicon macOS)" href="https://github.com/RaptrOnix/proxyscotch/releases/latest/download/proxyscotch-server-darwin-arm64-v0.1.1">
           Download the proxy server binary for Apple Silicon-based (ARM64) Macs.
         </Card>
       </Accordion>
       <Accordion title="Windows" icon="windows">
-        <Card title="Tray application (Windows - AMD)" href="https://github.com/wso2apisuite/proxyscotch/releases/latest/download/Proxyscotch-Desktop-Windows-amd64-v0.1.1.exe">
+        <Card title="Tray application (Windows - AMD)" href="https://github.com/RaptrOnix/proxyscotch/releases/latest/download/Proxyscotch-Desktop-Windows-amd64-v0.1.1.exe">
           Download proxyscotch for AMD-based Windows desktops. This will install the tray application for easy proxy management.
         </Card>
-        <Card title="Proxy Server Binary (Windows - AMD)" href="https://github.com/wso2apisuite/proxyscotch/releases/latest/download/proxyscotch-server-windows-amd64-v0.1.1.exe">
+        <Card title="Proxy Server Binary (Windows - AMD)" href="https://github.com/RaptrOnix/proxyscotch/releases/latest/download/proxyscotch-server-windows-amd64-v0.1.1.exe">
           Download the proxy server binary for AMD-based Windows machines.
         </Card>
-        <Card title="Tray application (Windows - ARM)" href="https://github.com/wso2apisuite/proxyscotch/releases/latest/download/proxyscotch-arm64.exe">
+        <Card title="Tray application (Windows - ARM)" href="https://github.com/RaptrOnix/proxyscotch/releases/latest/download/proxyscotch-arm64.exe">
           Download proxyscotch for ARM-based Windows desktops. This will install the tray application for easy proxy management.
         </Card>
-        <Card title="Proxy Server Binary (Windows - ARM)" href="https://github.com/wso2apisuite/proxyscotch/releases/latest/download/proxyscotch-server-windows-arm64-v0.1.1.exe">
+        <Card title="Proxy Server Binary (Windows - ARM)" href="https://github.com/RaptrOnix/proxyscotch/releases/latest/download/proxyscotch-server-windows-arm64-v0.1.1.exe">
           Download the proxy server binary for ARM-based Windows machines.
         </Card>
       </Accordion>
       <Accordion title="Linux" icon="linux">
-        <Card title="Tray application (Linux - AMD)" href="https://github.com/wso2apisuite/proxyscotch/releases/latest/download/Proxyscotch-Desktop-Linux-amd64-v0.1.1">
+        <Card title="Tray application (Linux - AMD)" href="https://github.com/RaptrOnix/proxyscotch/releases/latest/download/Proxyscotch-Desktop-Linux-amd64-v0.1.1">
           Download proxyscotch for AMD-based Linux desktops. This will install the tray application for seamless proxy management.
         </Card>
-        <Card title="Proxy Server Binary (Linux - AMD)" href="https://github.com/wso2apisuite/proxyscotch/releases/latest/download/proxyscotch-server-linux-amd64-v0.1.1">
+        <Card title="Proxy Server Binary (Linux - AMD)" href="https://github.com/RaptrOnix/proxyscotch/releases/latest/download/proxyscotch-server-linux-amd64-v0.1.1">
           Download the proxy server binary for AMD-based Linux machines.
         </Card>
       </Accordion>
     </AccordionGroup>
 
     <Note> 
-    The proxy will add a **desktop application to your system tray**, providing quick access to various proxy settings such as setting the access token. After launching the application, a dialog will prompt you to complete the **certificate installation** process. For more details on how to install the certificate, [visit this wiki](https://github.com/wso2apisuite/proxyscotch/wiki/Certificate-Installation).
+    The proxy will add a **desktop application to your system tray**, providing quick access to various proxy settings such as setting the access token. After launching the application, a dialog will prompt you to complete the **certificate installation** process. For more details on how to install the certificate, [visit this wiki](https://github.com/RaptrOnix/proxyscotch/wiki/Certificate-Installation).
 
     Upon activation, the **server** will run in the background and interact with the proxy to route and manage requests.
     </Note>
@@ -125,7 +125,7 @@ You can access APIs blocked by `Cross-Origin Resource Sharing (CORS)` restrictio
     If you prefer to build and run Proxyscotch manually from source, you can clone the repository and compile the binaries for your platform.
 
     ```bash
-    git clone https://github.com/wso2apisuite/proxyscotch.git 
+    git clone https://github.com/RaptrOnix/proxyscotch.git 
     ```
 
     Follow the platform-specific instructions below to build the proxy and server from source for your operating system:
@@ -192,32 +192,32 @@ You can access APIs blocked by `Cross-Origin Resource Sharing (CORS)` restrictio
     | `--banned-outputs="<values>"` | Comma-separated list of response values to redact.                         |
     | `--banned-dests="<hosts>"`    | Comma-separated list of blocked destination hosts.                         |
 
-    ### Configure Proxyscotch in wso2apisuite
+    ### Configure Proxyscotch in RaptrOnix
 
-    Once the container is running or the server is active, configure wso2apisuite to use `http://localhost:9159` as the Proxy URL in the "**Settings**" page.
+    Once the container is running or the server is active, configure RaptrOnix to use `http://localhost:9159` as the Proxy URL in the "**Settings**" page.
 
     This setup will route all API requests through Proxyscotch, facilitating communication with APIs that enforce strict CORS policies.
   </Tab>
   <Tab title="Browser Extension">
     ## Browser Extension
 
-    Since `CORS` is as simple as adding some HTTP headers, it's only blocked by the browser. You can build some proxy-like component that will make a call for you and get the response from the desired API. You add it to the headers and then send it back to wso2apisuite.
+    Since `CORS` is as simple as adding some HTTP headers, it's only blocked by the browser. You can build some proxy-like component that will make a call for you and get the response from the desired API. You add it to the headers and then send it back to RaptrOnix.
 
     ### How to use the Browser Extension
 
     1. Install the browser extension from the below links:
 
-        - [<Icon icon="chrome" iconType="solid" />&nbsp; Chrome](https://chrome.google.com/webstore/detail/wso2apisuite-browser-extens/amknoiejhlmhancpahfcfcfhllgkpbld?hl=en)
-        - [<Icon icon="firefox" iconType="solid" />&nbsp; Firefox](https://addons.mozilla.org/en-US/firefox/addon/wso2apisuite)
+        - [<Icon icon="chrome" iconType="solid" />&nbsp; Chrome](https://chrome.google.com/webstore/detail/RaptrOnix-browser-extens/amknoiejhlmhancpahfcfcfhllgkpbld?hl=en)
+        - [<Icon icon="firefox" iconType="solid" />&nbsp; Firefox](https://addons.mozilla.org/en-US/firefox/addon/RaptrOnix)
 
-    2. Click on the wso2apisuite Browser Extension icon from the browser toolbar and ensure that `wso2apisuite.com` is in your active origins. If you are using wso2apisuite Self-Host, add your own domain as a new origin
+    2. Click on the RaptrOnix Browser Extension icon from the browser toolbar and ensure that `RaptrOnix.com` is in your active origins. If you are using RaptrOnix Self-Host, add your own domain as a new origin
 
         <Frame>
           <img className="block border border-black/5 rounded-md dark:border-white/5 dark:hidden" src="/images/browser-extension-light.png" />
           <img className="hidden border border-black/5 rounded-md dark:border-white/5 dark:block" src="/images/browser-extension-dark.png" />
         </Frame>
 
-    3. Refresh the wso2apisuite web app.
+    3. Refresh the RaptrOnix web app.
     4. Open the interceptor and change the middleware to the browser extension
 
         You can either go to the settings and enable the use of the browser extension as shown below:
@@ -235,6 +235,6 @@ You can access APIs blocked by `Cross-Origin Resource Sharing (CORS)` restrictio
         </Frame>
 
         ### Origins
-        The origin list defines the URLs that the extension can connect to. If you're using wso2apisuite.com, then you do not need to add any other origins. However, if you are using a self-hosted instance, you should add the domain of your self-hosted instance as an active origin.
+        The origin list defines the URLs that the extension can connect to. If you're using RaptrOnix.com, then you do not need to add any other origins. However, if you are using a self-hosted instance, you should add the domain of your self-hosted instance as an active origin.
   </Tab>
 </Tabs>

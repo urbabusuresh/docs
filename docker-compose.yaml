@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  mintlify:
+    build: .  # Assuming you have a Dockerfile in the current directory
+    image: RaptrOnix-docs  # Optional: name the built image
+    ports:
+      - "3334:3334"
+    environment:
+      - PORT=3334
+      - NODE_ENV=production
+    restart: unless-stopped
+    command: ["mintlify", "dev", "-p", "3334", "--host", "0.0.0.0"]
+
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - mintlify
+
+volumes:
+  caddy_data:
+  caddy_config:
